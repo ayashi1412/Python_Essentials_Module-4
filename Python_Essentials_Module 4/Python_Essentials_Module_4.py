@@ -5,11 +5,15 @@
 #LAB 4.3.1.6: Utilising parameterized funcitons and return statement to test leap year.
 
 def is_year_leap(year):
-#   
-    if(year % 4 == 0):
-        return True
-      
 #
+    if year % 4 != 0:
+        return False
+    if year % 100 != 0:
+        return True
+    if year % 400 != 0:
+        return False
+    if year % 4 == 0:
+        return True
 
 test_data = [1900, 2000, 2016, 1987]
 test_results = [False, True, True, False]
