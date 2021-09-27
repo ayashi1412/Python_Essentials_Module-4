@@ -78,3 +78,25 @@ for i in range(1, 20):
 	if is_prime(i + 1):
 			print(i + 1, end=" ")
 print()
+
+#MODULE 4.3.1.10 LAB: Converting Fuel Consumption
+
+# 1 American mile = 1609.344 metres
+# 1 American gallon = 3.785411784 litres
+
+def liters_100km_to_miles_gallon(litres): 
+    gallons = litres / 3.785411784          #Converting litre to gallon which is small to big therefore, division.
+    miles = (100 * 1000) / 1609.344         #Converting km to mile which is small to bigh therefore divide (100 * 1000 to convert from km to m.)
+    return miles / gallons              
+
+def miles_gallon_to_liters_100km(miles):    
+    km_100 = miles * 1609.344 / (1000 * 100)  #Converting mile to m which is big to small therefore, multiplication (1000 * 100 converting km to m.)
+    litres = 3.785411784                      #Converting gallon to litres; 1 gallon = 3.785411784 as given.
+    return litres / km_100  
+
+print(liters_100km_to_miles_gallon(3.9))
+print(liters_100km_to_miles_gallon(7.5))
+print(liters_100km_to_miles_gallon(10.))
+print(miles_gallon_to_liters_100km(60.3))
+print(miles_gallon_to_liters_100km(31.4))
+print(miles_gallon_to_liters_100km(23.5))
