@@ -38,17 +38,14 @@ def is_year_leap(year):
         return False
     if year % 4 == 0:
         return True
-#
 
 def days_in_month(year, month):
-#
     No_of_days_Non_Leap = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]  #List of days for Non-leap years.
     No_of_days_Leap = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]      #List of days for leap years.
     if is_year_leap(year) and month == 2:                                   #Checking if the month is February of a leap year.
         return No_of_days_Leap
     else:                                                                   #For any conditions that isn't the months of February of a leap year.    
         return No_of_days_Non_Leap
-#
 
 test_years = [1900, 2000, 2016, 1987]
 test_months = [2, 2, 1, 11]
@@ -100,3 +97,5 @@ print(liters_100km_to_miles_gallon(10.))
 print(miles_gallon_to_liters_100km(60.3))
 print(miles_gallon_to_liters_100km(31.4))
 print(miles_gallon_to_liters_100km(23.5))
+
+#END OF LAB
