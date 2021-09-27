@@ -5,7 +5,6 @@
 #LAB 4.3.1.6: Utilising parameterized funcitons and return statement to test leap year.
 
 def is_year_leap(year):
-#
     if year % 4 != 0:       #If the year divided by 4 doesn't give the remainder 0, it isn't a leap year.
         return False
     if year % 100 != 0:     #For some early Gregorian years, the leap years are found it the year is divisible by 100 but not divisible by 400.
@@ -29,7 +28,6 @@ for i in range(len(test_data)):
 #MODULE 4.3.1.7: Finding the number of days in a month in a year.
 
 def is_year_leap(year):
-#
     if year % 4 != 0:
         return False
     if year % 100 != 0:
