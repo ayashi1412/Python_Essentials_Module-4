@@ -63,4 +63,18 @@ for i in range(len(test_years)):
 	else:
 		print("Failed")
 
-#MODULE 4.3.1.8
+#MODULE 4.3.1.8 How to find Prime Numbers
+
+def is_prime(num):
+    if num == 2:                    #Taking a single argument to check.
+        return True
+    for i in range(2, num):         #If the given number is divided by 2 to itself and the remainder is 0, its not prime therefore, False. 
+        if num % i == 0:
+            return False
+        else:
+            return True             #Else, it is prime number.
+    
+for i in range(1, 20):
+	if is_prime(i + 1):
+			print(i + 1, end=" ")
+print()
