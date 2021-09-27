@@ -58,7 +58,7 @@ for i in range(len(test_years)):
 	else:
 		print("Failed")
 
-#MODULE 4.3.1.8 How to find Prime Numbers
+#MODULE 4.3.1.9 How to find Prime Numbers
 
 def is_prime(num):
     if num == 2:                    #Taking a single argument to check.
