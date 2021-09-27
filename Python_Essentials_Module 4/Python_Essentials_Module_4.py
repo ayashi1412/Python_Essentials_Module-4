@@ -7,9 +7,9 @@
 def is_year_leap(year):
     if year % 4 != 0:       #If the year divided by 4 doesn't give the remainder 0, it isn't a leap year.
         return False
-    if year % 100 != 0:     #For some early Gregorian years, the leap years are found it the year is divisible by 100 but not divisible by 400.
+    if year % 100 != 0:     #For some early Gregorian years, the leap years are found if the year is divisible by 100 but not divisible by 400.
         return True
-    if year % 400 != 0:     #For some early Gregorian years, the leap years are found it the year is divisible by 100 but not divisible by 400.
+    if year % 400 != 0:     #For some early Gregorian years, the leap years are found if the year is divisible by 100 but not divisible by 400.
         return False
     if year % 4 == 0:       #If the year divided by 4 gives the remainder 0, it is a leap year after Gregorian year
         return True
