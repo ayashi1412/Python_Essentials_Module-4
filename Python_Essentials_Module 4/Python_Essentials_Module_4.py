@@ -37,13 +37,14 @@ def is_year_leap(year):
     if year % 4 == 0:
         return True
 
-def days_in_month(year, month):
-    No_of_days_Non_Leap = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]  #List of days for Non-leap years.
-    No_of_days_Leap = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]      #List of days for leap years.
-    if is_year_leap(year) and month == 2:                                   #Checking if the month is February of a leap year.
-        return No_of_days_Leap
-    else:                                                                   #For any conditions that isn't the months of February of a leap year.    
-        return No_of_days_Non_Leap
+def days_in_month(year,month):
+	if year < 1582 or month < 1 or month > 12:              #Checking year must be greater than 1582 and month must be between 1 and 12. Else None displayed.
+		return None
+	days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] #Assigning the list of days to days variable. (Some months have 31 days)
+	res  = days[month - 1]                                  #Assinging the list of 30 days to res variable.
+	if month == 2 and is_year_leap(year):                   #Condition to check if month is Feb (2) and is a leap year, res = 29 days.
+		res = 29
+	return res                                              #Condition to check if month is Feb(2) and is not a leap year, it returns to res.
 
 test_years = [1900, 2000, 2016, 1987]
 test_months = [2, 2, 1, 11]
