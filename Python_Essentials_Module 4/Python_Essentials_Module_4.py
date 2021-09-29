@@ -59,6 +59,42 @@ for i in range(len(test_years)):
 	else:
 		print("Failed")
 
+#MODULE 4.3.1.8: Task is to take 3 arguments (year, month, day) and return the corresponding year, or returns None.
+
+def is_year_leap(year):			#Checking leap year.
+	if year % 4 != 0:
+		return False
+	elif year % 100 != 0:
+		return True
+	elif year % 400 != 0:
+		return False
+	else:
+		return True
+
+def days_in_month(year, month):					#Defining no of days in a month.
+	if year < 1582 or month < 1 or month > 12:
+		return None
+	days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+	res  = days[month - 1]
+	if month == 2 and is_year_leap(year):
+		res = 29
+	return res
+
+def day_of_year(year, month, day):
+	days = 0							#Assigning current days to 0.
+	for m in range(1, month):			#Iterating the number of months.
+		md = days_in_month(year, m)		
+		if md == None:
+			return None
+		days += md
+	md = days_in_month(year, month)
+	if day >= 1 and day <= md:
+		return days + day
+	else:
+		return None
+
+print(day_of_year(2000, 12, 31))
+
 #MODULE 4.3.1.9 How to find Prime Numbers
 
 def is_prime(num):
